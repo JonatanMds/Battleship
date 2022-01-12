@@ -5,9 +5,11 @@ public class Battleship {
 
         Scanner scan = new Scanner(System.in);
         PlayerMachine machine = new PlayerMachine();
+        PlayerHuman human = new PlayerHuman();
 
+//        boolean fimGame = (human.acertoNavio > 0 && machine.acertoNavio > 0);
         int options;
-        boolean victory = false;
+//        System.out.println(fimGame);
 
 
         do{
@@ -37,18 +39,23 @@ public class Battleship {
                 "-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `-'   `"
         );
 
+
+        human.PlayerHumanTabuleiro();
+        human.PosicionarSeusNavios();
         machine.MachineMountBoard();
-        machine.TabuleiroPlayer();
-        machine.MachinePlays();
 
 
 
 
-        while(victory == false){
-            if(machine.contagemDeNavios == 0){
-                victory = true;
-                System.out.println("Vitória");
+
+
+        while(human.acertoNavio > 0 & machine.acertoNavio > 0){
+            machine.MachinePlays(human.Tabuleiro());
+            human.MostrarTabelaPlayerHuman();
+            human.HumanPlays(machine.MostrandoOPosicionamentoNaTelas());
+            System.out.println("Machineeeee");
+            machine.MostrandoOPosicionamentoNaTelas();
+            System.out.println(machine.acertoNavio);
             }
         }
     }
-}
