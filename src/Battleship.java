@@ -6,18 +6,17 @@ public class Battleship {
         Scanner scan = new Scanner(System.in);
         PlayerMachine machine = new PlayerMachine();
         PlayerHuman human = new PlayerHuman();
+        GameRules rules = new GameRules();
 
-//        boolean fimGame = (human.acertoNavio > 0 && machine.acertoNavio > 0);
-        int options;
-//        System.out.println(fimGame);
+        int options; //Opções para iniciar o jogo.
 
 
         do{
-            System.out.println("Bem vindo ao Naval Battle");
             System.out.println("1: Regras do jogo");
             System.out.println("2: Começar a jogar");
             options = scan.nextInt();
-            while(options != 1 && options != 2){
+            while(options != 1 && options != 2)
+            {
                 System.out.println("Por favor digite números validos");
                 System.out.println("1: Regras do jogo");
                 System.out.println("2: Começar a jogar");
@@ -25,8 +24,10 @@ public class Battleship {
             }
         }while(options != 1 && options != 2);
 
-        if(options == 1){
-            System.out.println("Regras do jogo..........");
+
+        if(options == 1)
+        {
+            rules.Regras();
         }
 
         System.out.println("                        |`-:_\n" +
@@ -40,22 +41,30 @@ public class Battleship {
         );
 
 
-        human.PlayerHumanTabuleiro();
-        human.PosicionarSeusNavios();
         machine.MachineMountBoard();
+        human.MontadorDeTabuleiroPlayerHuman();
+        human.PosicionadorDeSubmarinosPlayerHuman();
 
 
 
-
-
-
-        while(human.acertoNavio > 0 & machine.acertoNavio > 0){
+//      Jogadas Human/Machine
+        while(human.fimDeJogo == false && machine.fimDeJogo == false)//As duas condições ja vem como falsas
+        {
             machine.MachinePlays(human.Tabuleiro());
             human.MostrarTabelaPlayerHuman();
+            if(machine.fimDeJogo == false)
+            {
             human.HumanPlays(machine.MostrandoOPosicionamentoNaTelas());
-            System.out.println("Machineeeee");
-            machine.MostrandoOPosicionamentoNaTelas();
-            System.out.println(machine.acertoNavio);
             }
         }
+
+        //      Fim de jogo
+        if(machine.fimDeJogo == true)
+        {
+            System.out.println("Um humano nunca conseguira ganhar de uma máquina \n"+"MACHINE WINS!!!!!!!");
+        }else
+        {
+            System.out.println("Você foi o GANHADOR!!!!!");
+        }
     }
+}
