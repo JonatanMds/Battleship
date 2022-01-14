@@ -15,7 +15,7 @@ public class InputPlayerHuman {
     //inputs para colocar os navios do playerHuman na tabela
     public int InputLinha()
     {
-        System.out.println("Digite a linhas: ");
+        System.out.println("Digite a linha: ");
         linha = scan.nextInt();
         return linha;
     }
@@ -31,14 +31,14 @@ public class InputPlayerHuman {
     //Imputs para certar os navios do playerMachine
     public int LinhaDaTabelaDoPlayerMachine()
     {
-        System.out.println("Digite a linha de acerto do seu adiversário: ");
+        System.out.println("Digite a linha de acerto do seu adversário: ");
         linhaDaTabelaDoPlayerMachine = scan.nextInt();
         return linhaDaTabelaDoPlayerMachine;
     }
 
     public int ColunaDaTabelaDoPlayerMachine()
     {
-        System.out.println("Digite a coluna de acerto do seu adiverário: ");
+        System.out.println("Digite a coluna de acerto do seu adverário: ");
         colunaDaTabelaDoPlayerMachine = scan.nextInt();
         return colunaDaTabelaDoPlayerMachine;
     }
