@@ -13,11 +13,11 @@ public class Battleship {
 
         do{
             System.out.println("1: Regras do jogo");
-            System.out.println("2: Começar a jogar");
+            System.out.println("2: Comece a jogar");
             options = scan.nextInt();
             while(options != 1 && options != 2)
             {
-                System.out.println("Por favor digite números validos");
+                System.out.println("Por favor digite números válidos");
                 System.out.println("1: Regras do jogo");
                 System.out.println("2: Começar a jogar");
                 options = scan.nextInt();
@@ -64,7 +64,7 @@ public class Battleship {
             System.out.println("Um humano nunca conseguira ganhar de uma máquina \n"+"MACHINE WINS!!!!!!!");
         }else
         {
-            System.out.println("Você foi o GANHADOR!!!!!");
+            System.out.println("Você Venceu! Parabéns.");
         }
     }
 }

@@ -9,7 +9,7 @@ public class GameRules {
                                 "|_.__/ \\__,_|\\__|\\__|_|\\___||___/_| |_|_| .__/ \n" +
                                 "                                        | |    \n" +
                                 "                                        |_|    \n" +
-                        "Nessa versão o jogador terá a apenas 10 submarino para posicionar pelo seu mata \n"+
+                        "Nessa versão o jogador terá a apenas 10 submarinos para posicionar \n"+
                         "Navio posicionado N (Maiúsculo)\n" +
                                 ". Tiro certeiro * (Asterisco)\n" +
                                 ". Tiro na água – (Traço)\n" +
